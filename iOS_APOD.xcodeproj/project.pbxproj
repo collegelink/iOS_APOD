@@ -56,15 +56,31 @@
 		6ECB624B27E91BC800763E06 /* iOS_APOD */ = {
 			isa = PBXGroup;
 			children = (
+				6ECB626127E91C2B00763E06 /* Helpers */,
+				6ECB626027E91C1E00763E06 /* ViewControllers */,
 				6ECB624C27E91BC800763E06 /* AppDelegate.swift */,
 				6ECB624E27E91BC800763E06 /* SceneDelegate.swift */,
-				6ECB625027E91BC800763E06 /* ViewController.swift */,
 				6ECB625227E91BC800763E06 /* Main.storyboard */,
 				6ECB625527E91BD100763E06 /* Assets.xcassets */,
 				6ECB625727E91BD100763E06 /* LaunchScreen.storyboard */,
 				6ECB625A27E91BD100763E06 /* Info.plist */,
 			);
 			path = iOS_APOD;
+			sourceTree = "<group>";
+		};
+		6ECB626027E91C1E00763E06 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				6ECB625027E91BC800763E06 /* ViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		6ECB626127E91C2B00763E06 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
