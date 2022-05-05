@@ -27,7 +27,7 @@ class NetworkService {
             return
         }
 
-        AF.request(apiUrl, method: .get, parameters: nil)
+        AF.request(apiUrl, method: .get, parameters: defaultParams)
             .validate()
             .responseDecodable(of: NasaPicture.self, queue: .main) { response in
             switch response.result {

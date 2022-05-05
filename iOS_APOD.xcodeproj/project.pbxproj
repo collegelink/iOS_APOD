@@ -17,6 +17,7 @@
 		6ECB625627E91BD100763E06 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6ECB625527E91BD100763E06 /* Assets.xcassets */; };
 		6ECB625927E91BD100763E06 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6ECB625727E91BD100763E06 /* LaunchScreen.storyboard */; };
 		82E9DAE485A6039D50453946 /* Pods_iOS_APOD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B51BD47FE199DA5E1A08DAD /* Pods_iOS_APOD.framework */; };
+		A5C6776B2823A00200CAD920 /* ColorAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5C6776A2823A00200CAD920 /* ColorAssets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		6ECB625827E91BD100763E06 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6ECB625A27E91BD100763E06 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7B51BD47FE199DA5E1A08DAD /* Pods_iOS_APOD.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOS_APOD.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A5C6776A2823A00200CAD920 /* ColorAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = ColorAssets.xcassets; sourceTree = "<group>"; };
 		D7D3F08BE316E30796819ADE /* Pods-iOS_APOD.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS_APOD.release.xcconfig"; path = "Target Support Files/Pods-iOS_APOD/Pods-iOS_APOD.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -87,14 +89,13 @@
 		6ECB624B27E91BC800763E06 /* iOS_APOD */ = {
 			isa = PBXGroup;
 			children = (
+				A5C6776C2823A16500CAD920 /* Views */,
+				A5C6776928239FE800CAD920 /* Resources */,
 				6EC984E627EBCD6300167343 /* Models */,
 				6ECB626127E91C2B00763E06 /* Helpers */,
 				6ECB626027E91C1E00763E06 /* ViewControllers */,
 				6ECB624C27E91BC800763E06 /* AppDelegate.swift */,
 				6ECB624E27E91BC800763E06 /* SceneDelegate.swift */,
-				6ECB625227E91BC800763E06 /* Main.storyboard */,
-				6ECB625527E91BD100763E06 /* Assets.xcassets */,
-				6ECB625727E91BD100763E06 /* LaunchScreen.storyboard */,
 				6ECB625A27E91BD100763E06 /* Info.plist */,
 			);
 			path = iOS_APOD;
@@ -115,6 +116,24 @@
 				6EC984F027EBD9D800167343 /* AppExtensions.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		A5C6776928239FE800CAD920 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				6ECB625527E91BD100763E06 /* Assets.xcassets */,
+				A5C6776A2823A00200CAD920 /* ColorAssets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		A5C6776C2823A16500CAD920 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				6ECB625227E91BC800763E06 /* Main.storyboard */,
+				6ECB625727E91BD100763E06 /* LaunchScreen.storyboard */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		FACD97A780AD64E9EFC17365 /* Pods */ = {
@@ -188,6 +207,7 @@
 			files = (
 				6ECB625927E91BD100763E06 /* LaunchScreen.storyboard in Resources */,
 				6ECB625627E91BD100763E06 /* Assets.xcassets in Resources */,
+				A5C6776B2823A00200CAD920 /* ColorAssets.xcassets in Resources */,
 				6ECB625427E91BC800763E06 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
