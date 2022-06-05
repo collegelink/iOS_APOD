@@ -12,6 +12,7 @@ enum Color {
     enum Text: String {
         case gray = "Text.Gray"
         case black = "Text.Black"
+        case white = "Text.White"
         
         var color: UIColor? { return UIColor(named: self.rawValue) }
     }

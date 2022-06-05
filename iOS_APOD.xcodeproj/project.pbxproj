@@ -20,6 +20,8 @@
 		A543C042282651BA004A2CDD /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = A543C041282651BA004A2CDD /* Fonts.swift */; };
 		A543C044282651C1004A2CDD /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = A543C043282651C1004A2CDD /* Colors.swift */; };
 		A543C0462826612C004A2CDD /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A543C0452826612C004A2CDD /* BaseViewController.swift */; };
+		A5470A58284B1D8F0028DC80 /* DatePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5470A57284B1D8F0028DC80 /* DatePickerViewController.swift */; };
+		A5470A5A284B1F4C0028DC80 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A5470A59284B1F4C0028DC80 /* Localizable.strings */; };
 		A5C6776B2823A00200CAD920 /* ColorAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5C6776A2823A00200CAD920 /* ColorAssets.xcassets */; };
 /* End PBXBuildFile section */
 
@@ -41,6 +43,8 @@
 		A543C041282651BA004A2CDD /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		A543C043282651C1004A2CDD /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		A543C0452826612C004A2CDD /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		A5470A57284B1D8F0028DC80 /* DatePickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerViewController.swift; sourceTree = "<group>"; };
+		A5470A59284B1F4C0028DC80 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		A5C6776A2823A00200CAD920 /* ColorAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = ColorAssets.xcassets; sourceTree = "<group>"; };
 		D7D3F08BE316E30796819ADE /* Pods-iOS_APOD.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS_APOD.release.xcconfig"; path = "Target Support Files/Pods-iOS_APOD/Pods-iOS_APOD.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -112,6 +116,7 @@
 			children = (
 				A543C03F28264B01004A2CDD /* PhotoDetailsViewController.swift */,
 				A543C0452826612C004A2CDD /* BaseViewController.swift */,
+				A5470A57284B1D8F0028DC80 /* DatePickerViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -132,6 +137,7 @@
 			children = (
 				6ECB625527E91BD100763E06 /* Assets.xcassets */,
 				A5C6776A2823A00200CAD920 /* ColorAssets.xcassets */,
+				A5470A59284B1F4C0028DC80 /* Localizable.strings */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -214,6 +220,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A5470A5A284B1F4C0028DC80 /* Localizable.strings in Resources */,
 				6ECB625927E91BD100763E06 /* LaunchScreen.storyboard in Resources */,
 				6ECB625627E91BD100763E06 /* Assets.xcassets in Resources */,
 				A5C6776B2823A00200CAD920 /* ColorAssets.xcassets in Resources */,
@@ -276,6 +283,7 @@
 				6EC984EA27EBCE3D00167343 /* NetworkService.swift in Sources */,
 				6ECB624D27E91BC800763E06 /* AppDelegate.swift in Sources */,
 				A543C0462826612C004A2CDD /* BaseViewController.swift in Sources */,
+				A5470A58284B1D8F0028DC80 /* DatePickerViewController.swift in Sources */,
 				6EC984F127EBD9D800167343 /* AppExtensions.swift in Sources */,
 				6ECB624F27E91BC800763E06 /* SceneDelegate.swift in Sources */,
 				6EC984E827EBCD7A00167343 /* NasaPicture.swift in Sources */,

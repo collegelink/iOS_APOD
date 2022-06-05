@@ -48,7 +48,7 @@ private extension PhotoDetailsViewController {
         descriptionLabel.text = picture.explanation
         copyrightLabel.text = picture.copyright
         
-        if let imageUrl = URL(string: picture.url) {
+        if let imageUrl = URL(string: picture.url!) {
             photoImageView.af.setImage(withURL: imageUrl)
         }
     }

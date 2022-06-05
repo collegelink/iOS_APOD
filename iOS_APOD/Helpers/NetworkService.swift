@@ -26,8 +26,11 @@ class NetworkService {
         guard let apiUrl = apiUrl else {
             return
         }
+        
+        var params = defaultParams
+        params["date"] = "2022-06-04"
 
-        AF.request(apiUrl, method: .get, parameters: defaultParams)
+        AF.request(apiUrl, method: .get, parameters: params)
             .validate()
             .responseDecodable(of: NasaPicture.self, queue: .main) { response in
             switch response.result {
@@ -42,13 +45,13 @@ class NetworkService {
 
         var params = defaultParams
         if let fromDate = from {
-            params["end_date"] = fromDate.toYYYYMMDD
+            params["start_date"] = fromDate.toYYYYMMDD
         }
         if let toDate = to {
-            params["start_date"] = toDate.toYYYYMMDD
+            params["end_date"] = toDate.toYYYYMMDD
         }
 
-        AF.request(apiUrl, method: .get, parameters: nil)
+        AF.request(apiUrl, method: .get, parameters: params)
             .validate()
             .responseDecodable(of: [NasaPicture].self, queue: .main) { response in
                 switch response.result {

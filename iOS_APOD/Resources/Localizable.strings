@@ -1,0 +1,19 @@
+/* 
+  Localizable.strings
+  iOS_APOD
+
+  Created by Manolis Zervos on 4/6/22.
+  
+*/
+
+// Date picker controller
+"date_picker_title" = "Please select a date or a date range";
+"date_picker_first_textfield_title" = "Start date";
+"date_picker_second_textfield_title" = "End date";
+"date_picker_button_title" = "Show images";
+"date_picker_first_textfield_placeholder" = "Start date";
+"date_picker_second_textfield_placeholder" = "End date";
+
+// General
+"cancel" = "Cancel";
+"done" = "Done";
