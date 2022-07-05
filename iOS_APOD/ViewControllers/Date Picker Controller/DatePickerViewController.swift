@@ -9,6 +9,8 @@ import UIKit
 
 class DatePickerViewController: BaseViewController {
     
+    static var nibName: String { String(describing: self) }
+    
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var firstTextfieldLabel: UILabel!
@@ -17,20 +19,27 @@ class DatePickerViewController: BaseViewController {
     @IBOutlet weak var secondTextfield: UITextField!
     @IBOutlet weak var submitButton: UIButton!
     
+    private var presenter: DatePickerPresentable
     private let datePicker = UIDatePicker()
-    private var startDate: Date?
-    private var endDate: Date?
-    private let network: NetworkService = NetworkService()
+    
+    init(presenter: DatePickerPresentable) {
+        self.presenter = presenter
+        super.init(nibName: Self.nibName, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
-        registerNotifications()
+        presenter.viewDidLoad(view: self)
         enableTargetsIfNeeded()
     }
     
     @IBAction func submitButtonTapped(_ sender: Any) {
-        fetchImages()
+        presenter.submitButtonTapped()
     }
 }
 
@@ -38,12 +47,11 @@ class DatePickerViewController: BaseViewController {
 
 private extension DatePickerViewController {
     
-    func registerNotifications() {
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
-    }
+    
     
     func setupUI() {
+        self.title = presenter.navigationTitle
+        navigationController?.navigationBar.prefersLargeTitles = true
         titleLabel.setFont(font: .bold(16.0), color: .black)
         firstTextfieldLabel.setFont(font: .regular(14.0), color: .gray)
         secondTextfieldLabel.setFont(font: .regular(14.0), color: .gray)
@@ -82,29 +90,17 @@ private extension DatePickerViewController {
     func donePressed() {
         let date = datePicker.date
         if firstTextfield.isEditing {
-            startDate = date
+            presenter.startDate = date
             firstTextfield.text = date.toDMonthYYYY
             datePicker.minimumDate = date
             enableTargetsIfNeeded()
             secondTextfield.becomeFirstResponder()
         } else {
-            endDate = date
+            presenter.endDate = date
             secondTextfield.text = date.toDMonthYYYY
             self.view.endEditing(true)
             enableTargetsIfNeeded()
         }
-    }
-    
-    @objc
-    func keyboardWillShow(notification: NSNotification) {
-        let info = notification.userInfo
-        let keyboardSize = (info?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue.size
-        scrollView.contentInset = UIEdgeInsets(top: 0.0, left: 0.0, bottom: keyboardSize?.height ?? 0.0, right: 0.0)
-    }
-    
-    @objc
-    func keyboardWillHide(notification: NSNotification) {
-        scrollView.contentInset = .zero
     }
     
     func enableTargetsIfNeeded() {
@@ -112,19 +108,22 @@ private extension DatePickerViewController {
         secondTextfield.setEnabled(firstTextfield.text?.isEmpty == false)
         secondTextfieldLabel.setEnabled(firstTextfield.text?.isEmpty == false)
     }
+}
+
+extension DatePickerViewController: DatePickerView {
+    func changeScrollViewInset(inset: UIEdgeInsets) {
+        scrollView.contentInset = inset
+    }
     
-    func fetchImages() {
-        guard let startDate = startDate, let endDate = endDate else { return }
-        showLoading(true)
-        network.fetchImages(from: startDate, to: endDate) { [weak self] result in
-            self?.showLoading(false)
-            switch result {
-                case .success(let images):
-                    // TODO: - navigate to inner screen
-                    break
-                case .failure(let error):
-                    self?.presentError(error)
-            }
-        }
+    func push(controller: UIViewController) {
+        navigationController?.pushViewController(controller, animated: true)
+    }
+    
+    func showLoadingState(_ loading: Bool) {
+        showLoading(loading)
+    }
+    
+    func showError(_ error: Error) {
+        presentError(error)
     }
 }

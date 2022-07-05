@@ -17,3 +17,9 @@
 // General
 "cancel" = "Cancel";
 "done" = "Done";
+
+// Navigation titles
+"home_tab_title" = "Photo of the Day";
+"photo_detail_navigation_title" = "Photo of %@";
+"search_tab_title" = "Find the Photo";
+"photos_table_vc_title" = "Selected photos";
