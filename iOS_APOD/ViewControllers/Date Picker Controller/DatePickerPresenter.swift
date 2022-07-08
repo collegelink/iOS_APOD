@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import FirebaseAnalytics
 
 class DatePickerPresenter {
     
@@ -66,6 +67,7 @@ extension DatePickerPresenter: DatePickerPresentable {
     }
     
     func submitButtonTapped() {
+        Analytics.logEvent("date_picker_button_tapped", parameters: [:])
         fetchImages()
     }
 }

@@ -37,6 +37,7 @@
 		A587BAED2874A600008E5A8B /* DatePickerPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A587BAEC2874A600008E5A8B /* DatePickerPresenter.swift */; };
 		A587BAEF2874A60B008E5A8B /* DatePickerTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = A587BAEE2874A60B008E5A8B /* DatePickerTypes.swift */; };
 		A5C6776B2823A00200CAD920 /* ColorAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5C6776A2823A00200CAD920 /* ColorAssets.xcassets */; };
+		A5D9614128781A770081417D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A5D9614028781A770081417D /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -74,6 +75,7 @@
 		A587BAEC2874A600008E5A8B /* DatePickerPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerPresenter.swift; sourceTree = "<group>"; };
 		A587BAEE2874A60B008E5A8B /* DatePickerTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerTypes.swift; sourceTree = "<group>"; };
 		A5C6776A2823A00200CAD920 /* ColorAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = ColorAssets.xcassets; sourceTree = "<group>"; };
+		A5D9614028781A770081417D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D7D3F08BE316E30796819ADE /* Pods-iOS_APOD.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS_APOD.release.xcconfig"; path = "Target Support Files/Pods-iOS_APOD/Pods-iOS_APOD.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -135,6 +137,7 @@
 				6ECB624C27E91BC800763E06 /* AppDelegate.swift */,
 				6ECB624E27E91BC800763E06 /* SceneDelegate.swift */,
 				6ECB625A27E91BD100763E06 /* Info.plist */,
+				A5D9614028781A770081417D /* GoogleService-Info.plist */,
 			);
 			path = iOS_APOD;
 			sourceTree = "<group>";
@@ -246,6 +249,7 @@
 				6ECB624627E91BC800763E06 /* Frameworks */,
 				6ECB624727E91BC800763E06 /* Resources */,
 				F7D01197E5CB96D1B5F4CE41 /* [CP] Embed Pods Frameworks */,
+				A5D9614228781AF00081417D /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -301,6 +305,7 @@
 				A5C6776B2823A00200CAD920 /* ColorAssets.xcassets in Resources */,
 				6ECB625427E91BC800763E06 /* Main.storyboard in Resources */,
 				A587BAE92874A468008E5A8B /* DatePickerViewController.xib in Resources */,
+				A5D9614128781A770081417D /* GoogleService-Info.plist in Resources */,
 				A587BADE28749731008E5A8B /* PhotoDetailsViewController.xib in Resources */,
 				A5321A2E287200B80071FCB6 /* PhotoTableViewCell.xib in Resources */,
 			);
@@ -330,6 +335,23 @@
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
+		};
+		A5D9614228781AF00081417D /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/FirebaseCrashlytics/run\"\n";
 		};
 		F7D01197E5CB96D1B5F4CE41 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -522,6 +544,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = M8S956QKFH;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = iOS_APOD/Info.plist;

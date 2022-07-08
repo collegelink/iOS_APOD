@@ -6,6 +6,8 @@ target 'iOS_APOD' do
   use_frameworks!
   pod 'Alamofire', '~> 5.5'
   pod 'AlamofireImage', '~> 4.1'
+  pod 'FirebaseAnalytics'
+  pod 'FirebaseCrashlytics'
   # Pods for iOS_APOD
 
 end
